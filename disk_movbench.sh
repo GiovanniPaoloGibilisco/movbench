@@ -1,4 +1,8 @@
 #!/bin/bash
+# configure
+bin=`dirname "$0"`
+DIR=`cd "$bin"; pwd`
+. "${DIR}/config.sh"
 
 RUNTIME=180
 SIZE=2g

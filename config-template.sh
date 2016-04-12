@@ -1,0 +1,4 @@
+#!/bin/bash
+WEB_SERVER_ADDR=
+MYSQL_USER=
+MYSQL_PASS=

@@ -1,9 +1,14 @@
 #!/bin/bash
+# configure
+bin=`dirname "$0"`
+DIR=`cd "$bin"; pwd`
+. "${DIR}/config.sh"
 
 BASE=~/movbench
 LOGS=$BASE/logs
 TS=`date "+%Y%m%d_%H%M%S"`
-LOGFILE=$LOGS/movbench_$TS.log
+HOSTNAME=`hostname`
+LOGFILE=$LOGS/movbench_$HOSTNAME_$TS.log
 
 cd $BASE
 echo $TS > $LOGFILE
