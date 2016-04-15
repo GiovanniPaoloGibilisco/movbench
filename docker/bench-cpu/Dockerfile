@@ -1,0 +1,16 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get install -y \
+    sysbench \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV BENCHMARK_VERSION=0.1
+ENV BENCHMARK_ARCHIVE="https://github.com/GiovanniPaoloGibilisco/movbench/archive/v$BENCHMARK_VERSION.tar.gz"
+
+RUN wget "$BENCHMARK_ARCHIVE" \
+    && mv "v$BENCHMARK_VERSION.tar.gz" benchmark.tar.gz \
+    && tar -xzf benchmark.tar.gz \
+    && rm benchmark.tar.gz 
+
+CMD ["movbench-0.1/cpu_movbench.sh"]
