@@ -8,7 +8,7 @@ BASE=~/movbench
 LOGS=$BASE/logs
 TS=`date "+%Y%m%d_%H%M%S"`
 HOSTNAME=`hostname`
-LOGFILE=$LOGS/movbench_$HOSTNAME_$TS.log
+LOGFILE=$LOGS/movbench_web_${HOSTNAME}_$TS.log
 
 cd $BASE
 echo $TS > $LOGFILE
