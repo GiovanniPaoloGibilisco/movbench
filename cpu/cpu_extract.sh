@@ -20,5 +20,5 @@ echo "cpu_time_max=$value"
 cpu_percentile=$(cat $file | grep "Maximum prime number checked in CPU test" -A 11 | awk '/95 percentile:/ {print $4}' | awk -F\m '{print $1}')
 cpu_percentile_sec=$(echo "scale=5; $cpu_percentile / 1000" | bc)
 value=$cpu_percentile_sec
-echo "cpu_time_95th_perc$value"
+echo "cpu_time_95th_perc=$value"
 
