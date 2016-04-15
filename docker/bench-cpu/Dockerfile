@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ENV BENCHMARK_VERSION=0.2
+ENV BENCHMARK_VERSION=0.2.1
 ENV BENCHMARK_ARCHIVE="https://github.com/GiovanniPaoloGibilisco/movbench/archive/v$BENCHMARK_VERSION.tar.gz"
 
 RUN wget "$BENCHMARK_ARCHIVE" \
@@ -13,4 +13,4 @@ RUN wget "$BENCHMARK_ARCHIVE" \
     && tar -xzf benchmark.tar.gz \
     && rm benchmark.tar.gz 
 
-CMD ["movbench-0.1/cpu_movbench.sh"]
+CMD movbench-${BENCHMARK_VERSION}/cpu/run.sh
